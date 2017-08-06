@@ -1,0 +1,30 @@
+<div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-1">
+                    <h5>User:</h5>
+                </div>
+                <div class="col-lg-1">
+                    <select class="custom-select" id="users-list">
+                        <option ng-repeat="u in users" value="{{u.id}}">{{u.name}}</option>
+                    </select>
+                </div>
+                <div class="col-lg-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Send Chirp..." id="chirp-input">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="chirp-button">Chirp!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="list-group" id="chirp-container">
+                    <li class="list-group-item" ng-repeat="c in chirps">
+                        <h4>{{c.message}}</h4>
+                        <p>{{c.userName}}</p>
+                        <p>{{c.timestamp}}</p>
+                        <a ng-href="/#!/chirps/{{c.id}}">Go To Single</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
